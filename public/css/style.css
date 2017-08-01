@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@media (max-width: 768px) {
+  .navigator-title, .nav-btn {
+    text-align: center; } }
+.wrapper {
+  font-size: 16px !important; }
+
+.navigator {
+  background-color: #5cb85c;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  color: #fff !important; }
+  .navigator .nav-btn a {
+    color: #fff !important;
+    background-color: #a0d6a0;
+    border: none; }
+  .navigator .nav-btn a:hover {
+    background-color: #c4e6c4; }
+  .navigator .nav-btn a.active {
+    background-color: #fff;
+    color: #5cb85c !important; }
+
+#div-search-word #div-word-meaning {
+  overflow-y: auto; }
+  #div-search-word #div-word-meaning .div-word-type {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 16px; }
+    #div-search-word #div-word-meaning .div-word-type .word-type {
+      font-weight: bold;
+      color: darkblue;
+      margin: 0; }
+    #div-search-word #div-word-meaning .div-word-type .word-type:before {
+      content: '★ ';
+      color: #d70000; }
+    #div-search-word #div-word-meaning .div-word-type .word-mean {
+      margin: 5px 0 5px 25px; }
+    #div-search-word #div-word-meaning .div-word-type .word-mean:before {
+      content: '⧉  ';
+      color: #5cb85c; }
+    #div-search-word #div-word-meaning .div-word-type .word-example:before {
+      content: '▪ ';
+      color: chocolate; }
+    #div-search-word #div-word-meaning .div-word-type .word-example {
+      color: chocolate;
+      font-size: 14px;
+      margin: 0 0 0 50px; }
+    #div-search-word #div-word-meaning .div-word-type .translate {
+      color: lightgray; }
+    #div-search-word #div-word-meaning .div-word-type .translate:before {
+      content: ' → '; }
+  #div-search-word #div-word-meaning .div-word-type:last-child {
+    border-bottom: none; }
+
+#inp-search-result {
+  overflow: auto; }
+
+#div-show-word h3 a, #div-show-word h3 a:hover {
+  color: lightgray;
+  text-decoration: none; }
+#div-show-word h3 #pronunciation {
+  font-family: "Tahoma"; }
+
+#div-show-all-word {
+  overflow: auto;
+  font-size: 16px; }
+  #div-show-all-word h3 {
+    border-bottom: 1px solid #5cb85c; }
+  #div-show-all-word a {
+    color: black !important;
+    text-decoration: none; }
+  #div-show-all-word a:before {
+    content: '▪ '; }
+  #div-show-all-word .word-start-with-char {
+    margin: 5px 0; }
+
+.close:before {
+  content: '' !important; }
+
+/*# sourceMappingURL=style.css.map */

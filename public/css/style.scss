@@ -1,0 +1,135 @@
+$success_color: #5cb85c;
+$success_light: #a0d6a0;
+$success_lighter: #c4e6c4;
+$main_color: lightgray;
+
+@media (max-width: 768px){
+  .navigator-title, .nav-btn{
+    text-align: center;
+  }
+}
+
+.wrapper{
+  //border: 1px solid black;
+  font-size: 16px !important;
+}
+
+.navigator{
+  background-color: $success_color;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  color: #fff !important;
+
+  .nav-btn{
+    a{
+      color: #fff !important;
+      background-color: $success_light;
+      border:none;
+    }
+
+    a:hover{
+      background-color: $success_lighter;
+    }
+
+    a.active{
+      background-color: #fff;
+      color: $success_color !important;
+    }
+  }
+}
+
+#div-search-word{
+  #div-word-meaning{
+
+    overflow-y: auto;
+    //border: 1px solid black;
+    .div-word-type{
+      border-bottom: 1px solid lightgray;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      font-size: 16px;
+
+      .word-type{
+        font-weight: bold;
+        color: darkblue;
+        margin: 0;
+      }
+
+      .word-type:before{
+        content: '★ ';
+        color: #d70000;
+      }
+
+      .word-mean{
+        margin: 5px 0 5px 25px;
+      }
+
+      .word-mean:before{
+        content: '⧉  ';
+        color: $success_color;
+      }
+
+      .word-example:before{
+        content: '▪ ';
+        color: chocolate;
+      }
+
+      .word-example{
+        color: chocolate;
+        font-size: 14px;
+        margin: 0 0 0 50px;
+      }
+
+      .translate{
+        color: $main_color;
+      }
+
+      .translate:before{
+        content: ' → ';
+      }
+    }
+
+    .div-word-type:last-child{
+      border-bottom: none;
+    }
+  }
+}
+
+#inp-search-result{
+  overflow: auto;
+}
+
+#div-show-word{
+  h3{
+    a, a:hover{
+      color: $main_color;
+      text-decoration: none;
+    }
+    #pronunciation{
+      font-family: "Tahoma";
+    }
+  }
+}
+
+#div-show-all-word{
+  overflow: auto;
+  font-size: 16px;
+  h3{
+    border-bottom: 1px solid $success_color;
+  }
+  a{
+    color: black !important;
+    text-decoration: none;
+  }
+  a:before{
+    content: '▪ ';
+  }
+
+  .word-start-with-char{
+    margin: 5px 0;
+  }
+}
+
+.close:before{
+  content: '' !important;
+}
