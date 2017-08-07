@@ -12,5 +12,7 @@ return array(
 	'host' => 'localhost',
 	'user' => 'root',
 	'pass' => '',
-	'dbName' => 'myword'
+	'dbName' => 'myword',
+	'username' => 'admin',
+	'password' => 'dfc97ce92442f47c9cd141aa9a3a299e'
 );

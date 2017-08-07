@@ -8,8 +8,11 @@
 if (!defined('SYSTEM_PATH'))
 	die('Bad request!');
 
+$haveSSL = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
+$header = $haveSSL ? "https://" : "http://";
+
 return array(
 	'module' => 'word',
 	'action' => 'index',
-	'baseUrl' => 'http://localhost/MyWord'
+	'baseUrl' => $header . 'localhost/MyWord'
 );

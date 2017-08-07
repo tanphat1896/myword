@@ -13,3 +13,4 @@ define('PUBLIC_PATH', __DIR__ . '/public');
 require_once SYSTEM_PATH . '/core/Bootstrap.php';
 
 Bootstrap::run();
+

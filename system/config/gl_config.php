@@ -8,3 +8,8 @@
 if (!defined('SYSTEM_PATH'))
 	die('Bad request!');
 
+return array(
+	"pagination" => array(
+		'limit' => 24
+	)
+);

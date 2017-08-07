@@ -6,19 +6,19 @@
   font-size: 16px !important; }
 
 .navigator {
-  background-color: #5cb85c;
+  background-color: #337ab7;
   padding: 10px 5px;
   margin-bottom: 10px;
   color: #fff !important; }
   .navigator .nav-btn a {
     color: #fff !important;
-    background-color: #a0d6a0;
+    background-color: #81b1da;
     border: none; }
   .navigator .nav-btn a:hover {
-    background-color: #c4e6c4; }
+    background-color: #bad5eb; }
   .navigator .nav-btn a.active {
     background-color: #fff;
-    color: #5cb85c !important; }
+    color: #337ab7 !important; }
 
 #div-search-word #div-word-meaning {
   overflow-y: auto; }
@@ -30,7 +30,7 @@
     #div-search-word #div-word-meaning .div-word-type .word-type {
       font-weight: bold;
       color: darkblue;
-      margin: 0; }
+      margin: 10px 0 0 0; }
     #div-search-word #div-word-meaning .div-word-type .word-type:before {
       content: '★ ';
       color: #d70000; }
@@ -60,22 +60,54 @@
   color: lightgray;
   text-decoration: none; }
 #div-show-word h3 #pronunciation {
-  font-family: "Tahoma"; }
+  font-family: "Segoe UI"; }
 
 #div-show-all-word {
   overflow: auto;
   font-size: 16px; }
   #div-show-all-word h3 {
-    border-bottom: 1px solid #5cb85c; }
+    border-bottom: 1px solid #337ab7; }
   #div-show-all-word a {
     color: black !important;
-    text-decoration: none; }
+    text-decoration: none;
+    transition: text-shadow 0.25s; }
+  #div-show-all-word a:hover {
+    text-shadow: 0 0 2px #5cb85c; }
   #div-show-all-word a:before {
-    content: '▪ '; }
+    content: '★  ';
+    color: #5cb85c; }
   #div-show-all-word .word-start-with-char {
     margin: 5px 0; }
 
 .close:before {
   content: '' !important; }
+
+.explanation {
+  border: 1px solid #337ab7;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px; }
+  .explanation input {
+    margin-bottom: 5px; }
+
+.row {
+  margin-bottom: 10px; }
+
+.div-article .article {
+  margin-bottom: 10px;
+  padding: 10px 0; }
+  .div-article .article a.article-title {
+    font-size: 20px;
+    text-decoration: none !important;
+    color: darkgreen; }
+  .div-article .article a.article-title:before {
+    content: '★ ';
+    color: darkred; }
+
+#div-add-article .nicEdit-main {
+  resize: none;
+  min-height: 250px !important;
+  max-height: 250px !important;
+  overflow-y: scroll !important; }
 
 /*# sourceMappingURL=style.css.map */

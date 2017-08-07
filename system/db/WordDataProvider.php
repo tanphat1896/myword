@@ -65,6 +65,11 @@ class WordDataProvider extends BaseDataProvider {
 		return $this->getAllRow($sql);
 	}
 
+//	public function searchWord($inputChar){
+//		$sql = "select * from " . $this->table . " where keyword like '$inputChar%'";
+//		return $this->getAllRow($sql);
+//	}
+
 	/**
 	 * Lấy hết từ trong bảng
 	 * @param int $idStart

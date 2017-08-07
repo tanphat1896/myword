@@ -1,7 +1,8 @@
+$main_color: #337ab7;
+$main_light_color: #81b1da;
+$main_lighter_color: #bad5eb;
 $success_color: #5cb85c;
-$success_light: #a0d6a0;
-$success_lighter: #c4e6c4;
-$main_color: lightgray;
+$light_color: lightgray;
 
 @media (max-width: 768px){
   .navigator-title, .nav-btn{
@@ -15,7 +16,7 @@ $main_color: lightgray;
 }
 
 .navigator{
-  background-color: $success_color;
+  background-color: $main_color;
   padding: 10px 5px;
   margin-bottom: 10px;
   color: #fff !important;
@@ -23,17 +24,17 @@ $main_color: lightgray;
   .nav-btn{
     a{
       color: #fff !important;
-      background-color: $success_light;
+      background-color: $main_light_color;
       border:none;
     }
 
     a:hover{
-      background-color: $success_lighter;
+      background-color: $main_lighter_color;
     }
 
     a.active{
       background-color: #fff;
-      color: $success_color !important;
+      color: $main_color !important;
     }
   }
 }
@@ -52,7 +53,7 @@ $main_color: lightgray;
       .word-type{
         font-weight: bold;
         color: darkblue;
-        margin: 0;
+        margin: 10px 0 0 0 ;
       }
 
       .word-type:before{
@@ -81,7 +82,7 @@ $main_color: lightgray;
       }
 
       .translate{
-        color: $main_color;
+        color: $light_color;
       }
 
       .translate:before{
@@ -102,11 +103,11 @@ $main_color: lightgray;
 #div-show-word{
   h3{
     a, a:hover{
-      color: $main_color;
+      color: $light_color;
       text-decoration: none;
     }
     #pronunciation{
-      font-family: "Tahoma";
+      font-family: "Segoe UI";
     }
   }
 }
@@ -115,14 +116,21 @@ $main_color: lightgray;
   overflow: auto;
   font-size: 16px;
   h3{
-    border-bottom: 1px solid $success_color;
+    border-bottom: 1px solid $main_color;
   }
   a{
     color: black !important;
     text-decoration: none;
+    transition: text-shadow 0.25s;
   }
+
+  a:hover{
+    text-shadow: 0 0 2px $success_color;
+  }
+
   a:before{
-    content: '▪ ';
+    content: '★  ';
+    color: $success_color;
   }
 
   .word-start-with-char{
@@ -132,4 +140,46 @@ $main_color: lightgray;
 
 .close:before{
   content: '' !important;
+}
+
+.explanation{
+  border: 1px solid $main_color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px;
+
+  input{
+    margin-bottom: 5px;
+  }
+}
+
+.row{
+  margin-bottom: 10px;
+}
+
+.div-article{
+  .article{
+    margin-bottom: 10px;
+    padding: 10px 0;
+
+    a.article-title{
+      font-size: 20px;
+      text-decoration: none !important;
+      color: darkgreen;
+    }
+
+    a.article-title:before{
+      content: '★ ';
+      color: darkred;
+    }
+  }
+}
+
+#div-add-article{
+  .nicEdit-main{
+    resize: none;
+    min-height: 250px !important;
+    max-height: 250px !important;
+    overflow-y: scroll !important;
+  }
 }

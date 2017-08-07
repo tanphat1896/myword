@@ -2,6 +2,7 @@
  * Created by ngtanphat on 31/7/2017.
  */
 $(function () {
+
     var divShowAllWord = $('#div-show-all-word');
     var nav = $('.navigator');
     $('[data-toggle="tooltip"]').tooltip();
@@ -9,7 +10,8 @@ $(function () {
         'height', $(window).height() - $(nav).outerHeight() - $('#div-word').outerHeight() - 100)
     $(divShowAllWord).css('height', $(window).height() - $(nav).outerHeight() - 20)
     $('#link-hide-div-show-word').click(function () {
-        toggleDivWord(true);
+        toggleDivShowWord(false);
+        toggleDivShowAllWord(true);
         return false;
     });
 
@@ -27,18 +29,31 @@ $(function () {
         }
     });
 
+    addEventToWord();
+
+    $('#link-speak-word').click(function (e) {
+        e.preventDefault();
+        var word = $('#keyword').text();
+        responsiveVoice.speak(word, "US English Female");
+    });
+});
+
+function addEventToWord() {
     $('.word-start-with-char a').on('click', function (e) {
         e.preventDefault();
         var keyword = $(this).text();
         // alert(keyword);
         getWordExplanation(keyword);
     });
+}
 
-});
 function getWordExplanation(keyword){
+    toggleDivShowAllWord(false);
+    toggleDivWordLoading(true);
     $.get(
         "?m=word&a=retrieve&key=" + keyword,
         {}, function (respond) {
+            // console.log(respond);
             var result = $.parseJSON(respond);
             if (result.hasOwnProperty('success') && parseInt(result.success) === 1){
                 if (result.hasOwnProperty('data') && result.data !== "false"){
@@ -48,7 +63,9 @@ function getWordExplanation(keyword){
                 }
             }
         }, 'text'
-    );
+    ).always(function () {
+        toggleDivShowWord(true);
+    });
 }
 
 function generateHTMLData(keyword, plainExplanation){
@@ -57,7 +74,6 @@ function generateHTMLData(keyword, plainExplanation){
     if (!plainExplanation){
         $('#pronunciation').html('');
         $(divWordMeaning).html("Chưa cập nhật");
-        toggleDivWord(false);
         return true;
     }
     var pronunciation = plainExplanation.pronunciation;
@@ -83,16 +99,34 @@ function generateHTMLData(keyword, plainExplanation){
         meaningHtml += "</div></div";
     });
     $(divWordMeaning).html(meaningHtml);
-    toggleDivWord(false);
 }
 
 
-function toggleDivWord(isShowAllWord){
-    if (isShowAllWord){
-        $('#div-show-word').hide();
-        $('#div-show-all-word').fadeIn(200);
+function toggleDivShowWord(isVisible){
+    var divShowWord = $('#div-show-word');
+    if (!isVisible){
+        $(divShowWord).hide();
     } else {
-        $('#div-show-word').fadeIn(200);
-        $('#div-show-all-word').hide();
+        toggleDivWordLoading(false);
+        $(divShowWord).fadeIn(200);
+    }
+}
+
+function toggleDivWordLoading(isVisible){
+    var divWordLoading = $('#div-word-loading');
+    if (!isVisible){
+        $(divWordLoading).hide();
+    } else {
+        $(divWordLoading).fadeIn(200);
+    }
+}
+
+function toggleDivShowAllWord(isVisible){
+    var divShowAllWord = $('#div-show-all-word');
+    if (!isVisible){
+        $(divShowAllWord).hide();
+    } else {
+        toggleDivWordLoading(false);
+        $(divShowAllWord).fadeIn(200);
     }
 }

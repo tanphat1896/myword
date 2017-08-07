@@ -13,11 +13,10 @@ class MySQLConnection {
 	private static $provider = null;
 	private $con;
 	private function __construct() {
-		$dbConf = include_once SYSTEM_PATH . '/config/db_config.php';
-		$host = empty($dbConf['host']) ? 'localhost': $dbConf['host'];
-		$user = empty($dbConf['user']) ? 'root': $dbConf['user'];
-		$pass = empty($dbConf['pass']) ? '': $dbConf['pass'];
-		$dbName = empty($dbConf['dbName']) ? 'myword': $dbConf['dbName'];
+		$host = empty($GLOBALS['dbConfig']['host']) ? 'localhost': $GLOBALS['dbConfig']['host'];
+		$user = empty($GLOBALS['dbConfig']['user']) ? 'root': $GLOBALS['dbConfig']['user'];
+		$pass = empty($GLOBALS['dbConfig']['pass']) ? '': $GLOBALS['dbConfig']['pass'];
+		$dbName = empty($GLOBALS['dbConfig']['dbName']) ? 'myword': $GLOBALS['dbConfig']['dbName'];
 		$this->con = new mysqli($host, $user, $pass, $dbName)
 			or die('Connection failed');
 		$this->con->query('set names utf8');
