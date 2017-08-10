@@ -32,7 +32,7 @@ require_once MODULE_PATH . '/widget/header.php';
 <script src="<?php echo $baseUrl; ?>/public/js/responsivevoice.js"></script>
 <!--phần nội dung-->
 <div class="container-fluid" id="div-search-word">
-    <div class="col-sm-3" id="div-search-engine">
+    <div class="col-sm-2" id="div-search-engine">
         <form id="frm-search-word">
             <div class="form-group">
                 <label>Look up: </label><span id="search-loading" class="text-danger" style="display: none; font-size: 13px;">
@@ -48,7 +48,7 @@ require_once MODULE_PATH . '/widget/header.php';
     </div>
 
     <!--        phần giải thích-->
-    <div class="col-sm-9" style="display: none;" id="div-show-word">
+    <div class="col-sm-10" style="display: none;" id="div-show-word">
         <div id="div-word">
             <h3>
                 <a href="#" data-toggle="tooltip" title="Trở về" class="" id="link-hide-div-show-word">
@@ -77,7 +77,7 @@ require_once MODULE_PATH . '/widget/header.php';
     </div>
 
 <!--    loading-->
-    <div class="col-sm-9 text-center text-danger" style="display: none;" id="div-word-loading">
+    <div class="col-sm-10 text-center text-danger" style="display: none;" id="div-word-loading">
         <br><br><br>
         <img src="<?php echo $baseUrl; ?>/public/loading-mini.gif" alt="Đang tải">
     </div>
@@ -85,10 +85,10 @@ require_once MODULE_PATH . '/widget/header.php';
 
 
 <!--    phần hiển thị danh sách 50 từ đầu tiên-->
-    <div class="col-sm-9" id="div-show-all-word">
+    <div class="col-sm-10" id="div-show-all-word">
         <h3 class="text-primary">Tổng số từ, cụm từ: <span class="text-danger" id="total-word"><?php echo $total; ?></span>
             <?php if (loggedIn()){ ?>
-                <a href="?m=word&a=add" id="link-add-word" data-toggle="tooltip" class="close" title="Thêm mới" data-placement="bottom">
+                <a href="?m=word&a=add" id="link-add-word" class="close" >
                     <span class="glyphicon glyphicon-plus-sign" ></span>
                 </a>
             <?php } ?>
@@ -103,14 +103,14 @@ require_once MODULE_PATH . '/widget/header.php';
 			}
 			?>
         </div>
-        <div class="col-sm-12 text-center">
+        <div class="col-sm-12" id="div-btn-load-more">
             <img id="img-load-more-word-loading" style="display: none;"
                  src="<?php echo $baseUrl; ?>/public/loading-mini.gif" alt="Đang tải...">
             <input type="hidden" id="load-more-current-page" value="1">
             <?php 
             if (!$haveLoadAll){ ?>
             <button class="btn btn-primary btn-sm" id="btn-load-more-word">
-                <span class="glyphicon glyphicon-menu-down"></span> Tải thêm
+                <span class="glyphicon glyphicon-menu-down"></span>
             </button>
             <?php } ?>
         </div>

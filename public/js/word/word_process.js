@@ -7,8 +7,10 @@ $(function () {
     var nav = $('.navigator');
     $('[data-toggle="tooltip"]').tooltip();
     $('#div-word-meaning').css(
-        'height', $(window).height() - $(nav).outerHeight() - $('#div-word').outerHeight() - 100)
-    $(divShowAllWord).css('height', $(window).height() - $(nav).outerHeight() - 20)
+        'height', $(window).height() - $(nav).outerHeight() - $('#div-word').outerHeight() - 100);
+    $('#div-store-all-word').css(
+        'height',
+        $(window).height() - $(nav).outerHeight() - $('#div-btn-load-more').outerHeight() - $(divShowAllWord).find('h3').outerHeight() - 50);
     $('#link-hide-div-show-word').click(function () {
         toggleDivShowWord(false);
         toggleDivShowAllWord(true);

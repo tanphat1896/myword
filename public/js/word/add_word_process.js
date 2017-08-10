@@ -137,9 +137,8 @@ function sendRequestAddNewWord(keyword, pronunciation, explanationJSON) {
         },
         function (respond) {
             var result = $.parseJSON(respond);
-            if (result.hasOwnProperty('success') && parseInt(result.success) === 1)
-                alert("Thêm thành công");
-            else alert("Thêm thất bại");
+            if (result.hasOwnProperty('success') && parseInt(result.success) === 0)
+                alert("Thêm thất bại vì 1 lý do không thể biết ");
             window.location.reload();
         },
         "text"

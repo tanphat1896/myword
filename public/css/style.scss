@@ -114,14 +114,17 @@ $light_color: lightgray;
 
 #div-show-all-word{
   overflow: auto;
-  font-size: 16px;
+
   h3{
     border-bottom: 1px solid $main_color;
+    padding-bottom: 10px;
   }
   a{
     color: black !important;
     text-decoration: none;
     transition: text-shadow 0.25s;
+    font-size: 18px;
+    margin: 15px 0;
   }
 
   a:hover{
@@ -140,6 +143,7 @@ $light_color: lightgray;
 
 .close:before{
   content: '' !important;
+  padding-bottom: 10px;
 }
 
 .explanation{
@@ -175,11 +179,20 @@ $light_color: lightgray;
   }
 }
 
-#div-add-article{
+#div-add-article, #div-edit-article{
   .nicEdit-main{
     resize: none;
     min-height: 250px !important;
     max-height: 250px !important;
     overflow-y: scroll !important;
   }
+}
+
+#div-store-all-word{
+  //border: 1px solid blue;
+  overflow: auto;
+}
+
+#div-btn-load-more{
+  margin: 10px 0 80px 0;
 }

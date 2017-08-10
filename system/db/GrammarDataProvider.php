@@ -25,7 +25,7 @@ class GrammarDataProvider extends BaseDataProvider {
 	}
 
 	public function getListArticleTitle(){
-		$sql = "select * from {$this->table}";
+		$sql = "select * from {$this->table} order by title";
 		return $this->getAllRow($sql);
 	}
 

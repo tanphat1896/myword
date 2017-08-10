@@ -10,6 +10,6 @@ if (!defined('SYSTEM_PATH'))
 
 return array(
 	"pagination" => array(
-		'limit' => 24
+		'limit' => 51
 	)
 );

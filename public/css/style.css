@@ -63,14 +63,16 @@
   font-family: "Segoe UI"; }
 
 #div-show-all-word {
-  overflow: auto;
-  font-size: 16px; }
+  overflow: auto; }
   #div-show-all-word h3 {
-    border-bottom: 1px solid #337ab7; }
+    border-bottom: 1px solid #337ab7;
+    padding-bottom: 10px; }
   #div-show-all-word a {
     color: black !important;
     text-decoration: none;
-    transition: text-shadow 0.25s; }
+    transition: text-shadow 0.25s;
+    font-size: 18px;
+    margin: 15px 0; }
   #div-show-all-word a:hover {
     text-shadow: 0 0 2px #5cb85c; }
   #div-show-all-word a:before {
@@ -80,7 +82,8 @@
     margin: 5px 0; }
 
 .close:before {
-  content: '' !important; }
+  content: '' !important;
+  padding-bottom: 10px; }
 
 .explanation {
   border: 1px solid #337ab7;
@@ -104,10 +107,16 @@
     content: '★ ';
     color: darkred; }
 
-#div-add-article .nicEdit-main {
+#div-add-article .nicEdit-main, #div-edit-article .nicEdit-main {
   resize: none;
   min-height: 250px !important;
   max-height: 250px !important;
   overflow-y: scroll !important; }
+
+#div-store-all-word {
+  overflow: auto; }
+
+#div-btn-load-more {
+  margin: 10px 0 80px 0; }
 
 /*# sourceMappingURL=style.css.map */
